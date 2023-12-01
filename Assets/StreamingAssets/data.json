@@ -1,0 +1,597 @@
+{
+    "todasAsRodadas": [
+        {
+            "dificuldade": "Fácil",
+            "limiteDeTempo": 900,
+            "pontosPorAcerto": 100,
+            "danoPorAcerto": 0,
+            "danoPorErro": 0,
+            "perguntas": [
+              {
+                "textoDaPergunta": "Se você multiplicar 2 por ele mesmo três vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "8", "estaCorreta": true},
+                  {"textoResposta": "6", "estaCorreta": false},
+                  {"textoResposta": "4", "estaCorreta": false},
+                  {"textoResposta": "2", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 5 ao quadrado. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "25", "estaCorreta": true},
+                  {"textoResposta": "10", "estaCorreta": false},
+                  {"textoResposta": "50", "estaCorreta": false},
+                  {"textoResposta": "5", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 4 por ele mesmo quatro vezes, quanto você obterá como resultado?",
+                "respostas": [
+                  {"textoResposta": "256", "estaCorreta": true},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "32", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 3 à primeira potência. Qual é o valor resultante?",
+                "respostas": [
+                  {"textoResposta": "3", "estaCorreta": true},
+                  {"textoResposta": "9", "estaCorreta": false},
+                  {"textoResposta": "1", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 6 por ele mesmo três vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "216", "estaCorreta": true},
+                  {"textoResposta": "36", "estaCorreta": false},
+                  {"textoResposta": "72", "estaCorreta": false},
+                  {"textoResposta": "18", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 2 à quinta potência. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "32", "estaCorreta": true},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "8", "estaCorreta": false},
+                  {"textoResposta": "16", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 10 ao quadrado. Qual é o valor dessa potência?",
+                "respostas": [
+                  {"textoResposta": "100", "estaCorreta": true},
+                  {"textoResposta": "20", "estaCorreta": false},
+                  {"textoResposta": "200", "estaCorreta": false},
+                  {"textoResposta": "10", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você elevar 7 à primeira potência, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "7", "estaCorreta": true},
+                  {"textoResposta": "14", "estaCorreta": false},
+                  {"textoResposta": "49", "estaCorreta": false},
+                  {"textoResposta": "21", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Qual é o resultado de 3 elevado à potência zero?",
+                "respostas": [
+                  {"textoResposta": "1", "estaCorreta": true},
+                  {"textoResposta": "0", "estaCorreta": false},
+                  {"textoResposta": "9", "estaCorreta": false},
+                  {"textoResposta": "3", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 4 por ele mesmo três vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "64", "estaCorreta": true},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false},
+                  {"textoResposta": "32", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 3 por ele mesmo duas vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "6", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 8 ao cubo. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "512", "estaCorreta": true},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 5 por ele mesmo quatro vezes, quanto você obterá como resultado?",
+                "respostas": [
+                  {"textoResposta": "625", "estaCorreta": true},
+                  {"textoResposta": "125", "estaCorreta": false},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "500", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 2 à quarta potência. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "16", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "8", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você elevar 6 à segunda potência, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "36", "estaCorreta": true},
+                  {"textoResposta": "12", "estaCorreta": false},
+                  {"textoResposta": "72", "estaCorreta": false},
+                  {"textoResposta": "18", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 9 à primeira potência. Qual é o valor resultante?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "18", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 7 por ele mesmo três vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "343", "estaCorreta": true},
+                  {"textoResposta": "147", "estaCorreta": false},
+                  {"textoResposta": "49", "estaCorreta": false},
+                  {"textoResposta": "2401", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 4 à quinta potência. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "1024", "estaCorreta": true},
+                  {"textoResposta": "256", "estaCorreta": false},
+                  {"textoResposta": "512", "estaCorreta": false},
+                  {"textoResposta": "2048", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 10 à terceira potência. Qual é o valor dessa potência?",
+                "respostas": [
+                  {"textoResposta": "1000", "estaCorreta": true},
+                  {"textoResposta": "300", "estaCorreta": false},
+                  {"textoResposta": "100", "estaCorreta": false},
+                  {"textoResposta": "10000", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você elevar 2 à zero potência, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "1", "estaCorreta": true},
+                  {"textoResposta": "2", "estaCorreta": false},
+                  {"textoResposta": "0", "estaCorreta": false},
+                  {"textoResposta": "4", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 3 por ele mesmo duas vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "6", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 8 ao cubo. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "512", "estaCorreta": true},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 5 por ele mesmo quatro vezes, quanto você obterá como resultado?",
+                "respostas": [
+                  {"textoResposta": "625", "estaCorreta": true},
+                  {"textoResposta": "125", "estaCorreta": false},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "500", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 2 à quarta potência. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "16", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "8", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 3 por ele mesmo duas vezes, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "6", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 8 ao cubo. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "512", "estaCorreta": true},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você multiplicar 5 por ele mesmo quatro vezes, quanto você obterá como resultado?",
+                "respostas": [
+                  {"textoResposta": "625", "estaCorreta": true},
+                  {"textoResposta": "125", "estaCorreta": false},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "500", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 2 à quarta potência. Qual é o resultado dessa operação?",
+                "respostas": [
+                  {"textoResposta": "16", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "8", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se você elevar 6 à segunda potência, qual será o resultado?",
+                "respostas": [
+                  {"textoResposta": "36", "estaCorreta": true},
+                  {"textoResposta": "12", "estaCorreta": false},
+                  {"textoResposta": "72", "estaCorreta": false},
+                  {"textoResposta": "18", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve 9 à primeira potência. Qual é o valor resultante?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "18", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false}
+                ]
+              }
+            ]
+        },
+        {
+            "dificuldade": "Médio",
+            "limiteDeTempo": 900,
+            "pontosPorAcerto": 200,
+            "danoPorAcerto": 0,
+            "danoPorErro": 0,
+            "perguntas": [
+      
+              {
+                "textoDaPergunta": "Calcule o valor de 2^6.",
+                "respostas": [
+                  {"textoResposta": "64", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 3^4 dividido por 3^2.",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "243", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve (2^3)^2 a uma única potência.",
+                "respostas": [
+                  {"textoResposta": "64", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              }
+
+
+              ,
+              {
+                "textoDaPergunta": "Calcule o valor de 2^6.",
+                "respostas": [
+                  {"textoResposta": "64", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 3^4 dividido por 3^2.",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "243", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Eleve (2^3)^2 a uma única potência.",
+                "respostas": [
+                  {"textoResposta": "64", "estaCorreta": true},
+                  {"textoResposta": "32", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se x^3 = 27, qual é o valor de x?",
+                "respostas": [
+                  {"textoResposta": "3", "estaCorreta": true},
+                  {"textoResposta": "9", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 5^3 * 5^4.",
+                "respostas": [
+                  {"textoResposta": "78125", "estaCorreta": true},
+                  {"textoResposta": "125", "estaCorreta": false},
+                  {"textoResposta": "625", "estaCorreta": false},
+                  {"textoResposta": "3125", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se y^2 = 16, qual é o valor de y?",
+                "respostas": [
+                  {"textoResposta": "4", "estaCorreta": true},
+                  {"textoResposta": "8", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Resolva a expressão 2^4 + 3^2.",
+                "respostas": [
+                  {"textoResposta": "25", "estaCorreta": true},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "32", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se x^3 = 125, qual é o valor de x?",
+                "respostas": [
+                  {"textoResposta": "5", "estaCorreta": true},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "625", "estaCorreta": false},
+                  {"textoResposta": "3125", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 4^3 dividido por 4^2.",
+                "respostas": [
+                  {"textoResposta": "4", "estaCorreta": true},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se d^2 = 81, qual é o valor de d?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "729", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Calcule o valor de (3^2)^3.",
+                "respostas": [
+                  {"textoResposta": "729", "estaCorreta": true},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "243", "estaCorreta": false},
+                  {"textoResposta": "2187", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 2^5 * 2^3.",
+                "respostas": [
+                  {"textoResposta": "256", "estaCorreta": true},
+                  {"textoResposta": "128", "estaCorreta": false},
+                  {"textoResposta": "512", "estaCorreta": false},
+                  {"textoResposta": "1024", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se e^4 = 625, qual é o valor de e?",
+                "respostas": [
+                  {"textoResposta": "5", "estaCorreta": true},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "125", "estaCorreta": false},
+                  {"textoResposta": "625", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Resolva a expressão 4^2 - 2^4.",
+                "respostas": [
+                  {"textoResposta": "0", "estaCorreta": true},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se f^3 = 216, qual é o valor de f?",
+                "respostas": [
+                  {"textoResposta": "6", "estaCorreta": true},
+                  {"textoResposta": "36", "estaCorreta": false},
+                  {"textoResposta": "216", "estaCorreta": false},
+                  {"textoResposta": "1296", "estaCorreta": false}
+                ]
+            }
+            ]
+        },
+        {
+            "dificuldade": "Difícil",
+            "limiteDeTempo": 900,
+            "pontosPorAcerto": 300,
+            "danoPorAcerto": 0,
+            "danoPorErro": 0,
+            "perguntas": [
+      
+              {
+                "textoDaPergunta": "Calcule o valor de 2^10 * 3^8.",
+                "respostas": [
+                  {"textoResposta": "6718464", "estaCorreta": true},
+                  {"textoResposta": "524288", "estaCorreta": false},
+                  {"textoResposta": "33554432", "estaCorreta": false},
+                  {"textoResposta": "268435456", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 5^6 / 5^3.",
+                "respostas": [
+                  {"textoResposta": "125", "estaCorreta": true},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "625", "estaCorreta": false},
+                  {"textoResposta": "3125", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Resolva a expressão 3^5 / (3^2)^2.",
+                "respostas": [
+                  {"textoResposta": "3", "estaCorreta": true},
+                  {"textoResposta": "1", "estaCorreta": false},
+                  {"textoResposta": "9", "estaCorreta": false},
+                  {"textoResposta": "27", "estaCorreta": false}
+                ]
+              },
+
+              {
+                "textoDaPergunta": "Se a^4 = 256, qual é o valor de a?",
+                "respostas": [
+                  {"textoResposta": "4", "estaCorreta": true},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "128", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Calcule o valor de 2^8 * 4^5.",
+                "respostas": [
+                  {"textoResposta": "262144", "estaCorreta": true},
+                  {"textoResposta": "65536", "estaCorreta": false},
+                  {"textoResposta": "524288", "estaCorreta": false},
+                  {"textoResposta": "2097152", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se b^5 = 7776, qual é o valor de b?",
+                "respostas": [
+                  {"textoResposta": "6", "estaCorreta": true},
+                  {"textoResposta": "36", "estaCorreta": false},
+                  {"textoResposta": "216", "estaCorreta": false},
+                  {"textoResposta": "1296", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Resolva a expressão (2^3)^4 dividido por 2^5.",
+                "respostas": [
+                  {"textoResposta": "128", "estaCorreta": true},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false},
+                  {"textoResposta": "512", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se c^2 = 81, qual é o valor de c?",
+                "respostas": [
+                  {"textoResposta": "9", "estaCorreta": true},
+                  {"textoResposta": "27", "estaCorreta": false},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "729", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Simplifique 5^3 * 5^-2.",
+                "respostas": [
+                  {"textoResposta": "5", "estaCorreta": true},
+                  {"textoResposta": "25", "estaCorreta": false},
+                  {"textoResposta": "125", "estaCorreta": false},
+                  {"textoResposta": "625", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Calcule o valor de (2^6)^2 dividido por 2^4.",
+                "respostas": [
+                  {"textoResposta": "256", "estaCorreta": true},
+                  {"textoResposta": "128", "estaCorreta": false},
+                  {"textoResposta": "512", "estaCorreta": false},
+                  {"textoResposta": "1024", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se d^3 = 1728, qual é o valor de d?",
+                "respostas": [
+                  {"textoResposta": "12", "estaCorreta": true},
+                  {"textoResposta": "36", "estaCorreta": false},
+                  {"textoResposta": "216", "estaCorreta": false},
+                  {"textoResposta": "1296", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Resolva a expressão 3^4 * 3^0 + 3^2.",
+                "respostas": [
+                  {"textoResposta": "90", "estaCorreta": true},
+                  {"textoResposta": "81", "estaCorreta": false},
+                  {"textoResposta": "72", "estaCorreta": false},
+                  {"textoResposta": "100", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Se e^7 = 16384, qual é o valor de e?",
+                "respostas": [
+                  {"textoResposta": "4", "estaCorreta": true},
+                  {"textoResposta": "16", "estaCorreta": false},
+                  {"textoResposta": "64", "estaCorreta": false},
+                  {"textoResposta": "256", "estaCorreta": false}
+                ]
+              },
+              {
+                "textoDaPergunta": "Calcule o valor de 2^12 - 2^8.",
+                "respostas": [
+                  {"textoResposta": "3840", "estaCorreta": true},
+                  {"textoResposta": "3584", "estaCorreta": false},
+                  {"textoResposta": "4096", "estaCorreta": false},
+                  {"textoResposta": "3328", "estaCorreta": false}
+                ]
+              }
+      
+            ]
+        }
+    ]
+  }
+  
