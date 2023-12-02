@@ -110,6 +110,11 @@ public class NPCMovement : MonoBehaviour
     
     }
 
+    public void PararNPC()
+    {
+
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Player")

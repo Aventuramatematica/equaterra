@@ -11,6 +11,7 @@ public class AudioCharacter : MonoBehaviour
     [SerializeField] AudioClip[] terraSteps = null;
     [SerializeField] AudioClip[] areiaSteps = null;
     [SerializeField] AudioClip[] cidadeSteps = null;
+    [SerializeField] AudioClip[] madeiraSteps = null;
 
     [Header("Steps")]
     [SerializeField] float timer = 0.5f;
@@ -35,7 +36,8 @@ public class AudioCharacter : MonoBehaviour
                     (groundType == GroundType.Ladrilho) ? ladrilhoSteps :
                     (groundType == GroundType.Terra) ? terraSteps :
                     (groundType == GroundType.Areia) ? areiaSteps :
-                    cidadeSteps;
+                    (groundType == GroundType.Cidade) ? cidadeSteps:
+                    madeiraSteps;
 
             int index = Random.Range(0, steps.Length);
             footStepsAudioSource.PlayOneShot(steps[index]);

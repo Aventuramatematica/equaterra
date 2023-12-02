@@ -12,6 +12,7 @@ public class Dialogue : MonoBehaviour
     public float radious;
 
     private DialogueControl dc;
+    private NPCMovement npcMovement;
     bool onRadious;
 
     private void Start()
@@ -31,6 +32,7 @@ public class Dialogue : MonoBehaviour
             if (!dc.IsDialogueActive())  // Verifica se o diálogo não está ativo
             {
                 dc.Speech(profile, speechTxt, actorName);
+                npcMovement.PararNPC();
             }
         }
     }
