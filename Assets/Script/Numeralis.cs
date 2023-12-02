@@ -8,7 +8,8 @@ public enum GroundType
     Ladrilho,
     Terra,
     Areia,
-    Cidade
+    Cidade,
+    Madeira
 }
 
 public class PlayerController : MonoBehaviour
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask terraSteps;
     private LayerMask areiaSteps;
     private LayerMask cidadeSteps;
+    private LayerMask madeiraSteps;
     private GroundType groundType;
     private Collider2D col;
 
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         terraSteps = LayerMask.GetMask("ChaoTerra");
         areiaSteps = LayerMask.GetMask("ChaoAreia");
         cidadeSteps = LayerMask.GetMask("ChaoCidade");
+        madeiraSteps = LayerMask.GetMask("ChaoMadeira");
         col = GetComponent<Collider2D>();
     }
 
@@ -109,6 +112,8 @@ public class PlayerController : MonoBehaviour
             groundType = GroundType.Areia;
         else if (col.IsTouchingLayers(cidadeSteps))
             groundType = GroundType.Cidade;
+        else if (col.IsTouchingLayers(madeiraSteps))
+            groundType = GroundType.Madeira;
         else
             groundType = GroundType.None;
     }
