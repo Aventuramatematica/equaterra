@@ -25,7 +25,8 @@ public class DialogueControl : MonoBehaviour
 
     public void Speech(Sprite p, string[] txt, string actorName)
     {
-        dialogueActive = true;  
+        dialogueActive = true;
+        index = 0;  // Inicializa o índice para começar do início
         dialogueObj.SetActive(true);
         profile.sprite = p;
         sentences = txt;
@@ -35,12 +36,14 @@ public class DialogueControl : MonoBehaviour
 
     IEnumerator TypeSentence()
     {
+        speechText.text = "";  // Limpa o texto antes de começar a digitar
         foreach (char letter in sentences[index].ToCharArray())
         {
             speechText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
     }
+
 
     public void NextSentence()
     {
