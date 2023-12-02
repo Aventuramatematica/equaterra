@@ -107,14 +107,14 @@ public class NPCMovement : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontalMovement, verticalMovement);
         rb2d.velocity = movement * speed;
-
+    
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Player")
         {
-            // Se colidir com algo que não é o jogador, muda imediatamente de direção
+            // Se colidir com algo que não é o jogador, muda imediatamente de direção.
             moving = random.Next(0, 4);
         }
     }
