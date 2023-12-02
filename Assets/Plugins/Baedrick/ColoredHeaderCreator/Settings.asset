@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   headerSettings:
-    headerText: AjusteMapa
-    headerColor: {r: 0, g: 0, b: 0, a: 1}
+    headerText: Audio
+    headerColor: {r: 0.5820896, g: 0, b: 0.7264151, a: 1}
     textAlignmentOptions: 0
     fontStyleOptions: 0
     fontSize: 12
