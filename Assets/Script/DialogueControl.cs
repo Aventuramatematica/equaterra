@@ -25,12 +25,9 @@ public class DialogueControl : MonoBehaviour
         return dialogueActive;
     }
 
-    private void Start()
-    {
-        npcMovement = FindObjectOfType<NPCMovement>();
-    }
+    
 
-    public void Speech(Sprite p, string[] txt, string actorName)
+    public void Speech(Sprite p, string[] txt, string actorName, NPCMovement npc)
     {
         dialogueActive = true;
         index = 0;  // Inicializa o índice para começar do início
@@ -39,6 +36,7 @@ public class DialogueControl : MonoBehaviour
         sentences = txt;
         actorNameText.text = actorName;
         StartCoroutine(TypeSentence());
+        npcMovement = npc;
     }
 
     IEnumerator TypeSentence()
@@ -69,8 +67,10 @@ public class DialogueControl : MonoBehaviour
                 index = 0;
                 dialogueObj.SetActive(false);
                 dialogueActive = false;  // Define o diálogo como inativo
+                Debug.Log("npcMovement: " + npcMovement);
                 if (npcMovement != null)
                 {
+                    Debug.Log("Entrou no saida");
                     npcMovement.RetomarNPC();
                 }
             }
