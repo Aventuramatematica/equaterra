@@ -56,7 +56,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        // Normaliza o vetor de entrada apenas se o jogador não estiver se movendo na diagonal
+        if (horizontalInput != 0 && verticalInput != 0)
+        {
+            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+            {
+                // Se o movimento horizontal for maior que o vertical, ajusta o vertical para zero
+                verticalInput = 0f;
+            }
+            else
+            {
+                // Se o movimento vertical for maior que o horizontal, ajusta o horizontal para zero
+                horizontalInput = 0f;
+            }
+        }
+
+        Vector2 moveInput = new Vector2(horizontalInput, verticalInput);
         Vector2 moveVelocity = moveInput.normalized * (isDashing ? dashSpeed : speed);
 
         rb.velocity = moveVelocity;
@@ -71,6 +89,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
+
 
     private void FixedUpdate()
     {
