@@ -1,42 +1,110 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BackgroundMusicController : MonoBehaviour
 {
-    [SerializeField] AudioSource musicPlayer;
-    [SerializeField] AudioClip[] backgroundMusic;
+    public AudioClip[] backgroundMusicClips;
+    public AudioMixer audioMixer;
+    public string mixerGroupName = "background";
 
-    private int currentTrackIndex = 0;
+    private AudioSource audioSource;
+    private bool isMusicPlaying = false;
+
+    public Slider musicVolumeSlider; // Referência ao slider de volume da música
+
+    private static BackgroundMusicController instance;
+
+    void Awake()
+    {
+        // Garante que apenas uma instância do BackgroundMusicController exista
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.loop = true;
+
+            // Define o grupo do Audio Mixer
+            if (audioMixer != null)
+            {
+                audioSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups(mixerGroupName)[0];
+            }
+
+            // Inscreve o método SceneChanged para ser chamado quando a cena muda
+            SceneManager.sceneLoaded += SceneChanged;
+
+            // Configura o slider para chamar a função SetMusicVolume quando o valor mudar
+            musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
+        }
+        else
+        {
+            // Se uma instância já existe, destrua esta
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
-        PlayNextTrack();
+        // Inicia a reprodução da música de fundo
+        PlayRandomBackgroundMusic();
+    }
+
+    void PlayRandomBackgroundMusic()
+    {
+        if (backgroundMusicClips.Length == 0)
+        {
+            Debug.LogWarning("Nenhuma música de fundo atribuída ao array.");
+            return;
+        }
+
+        // Escolhe uma música aleatória do array
+        AudioClip randomClip = backgroundMusicClips[Random.Range(0, backgroundMusicClips.Length)];
+
+        // Define a música no AudioSource
+        audioSource.clip = randomClip;
+
+        // Inicia a reprodução
+        audioSource.Play();
+        isMusicPlaying = true;
+    }
+
+    void SceneChanged(Scene scene, LoadSceneMode mode)
+    {
+        // Se a cena mudou e a música estava tocando, pause a música
+        if (isMusicPlaying)
+        {
+            audioSource.Pause();
+            isMusicPlaying = false;
+        }
     }
 
     void Update()
     {
-        // Verifica se a música atual terminou
-        if (!musicPlayer.isPlaying)
+        // Exemplo: pressione a tecla "Up" para aumentar o volume e "Down" para diminuir o volume
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            PlayNextTrack();
+            ChangeVolume(0.1f); // Aumenta o volume em 10%
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            ChangeVolume(-0.1f); // Diminui o volume em 10%
         }
     }
 
-    void PlayNextTrack()
+    void ChangeVolume(float amount)
     {
-        // Certifica-se de que temos pelo menos uma faixa de música
-        if (backgroundMusic.Length == 0)
+        // Ajusta o volume no Audio Mixer
+        if (audioMixer != null)
         {
-            Debug.LogWarning("Nenhuma música de fundo configurada.");
-            return;
+            audioMixer.SetFloat("Background", Mathf.Log10(amount) * 20);
         }
+    }
 
-        // Atualiza o índice da faixa
-        currentTrackIndex = (currentTrackIndex + 1) % backgroundMusic.Length;
-
-        // Carrega e reproduz a próxima faixa
-        musicPlayer.clip = backgroundMusic[currentTrackIndex];
-        musicPlayer.Play();
+    void SetMusicVolume(float volume)
+    {
+        // Define o volume da música com base no valor do slider
+        ChangeVolume(volume);
     }
 }
