@@ -85,16 +85,23 @@ public class PlayerController : MonoBehaviour
         {
             isDashing = true;
 
+            // Salva o valor original da velocidade
             float originalSpeed = rb.velocity.magnitude;
 
             // Aumenta a velocidade durante o dash.
             rb.velocity = rb.velocity.normalized * dashSpeed;
+
+            // Define a propriedade "speed" do estado "run" para 1 no Animator
+            Numeralis.SetFloat("speed", 1);
 
             // Espera a duração do dash.
             yield return new WaitForSeconds(dashDuration);
 
             // Retorna à velocidade normal.
             rb.velocity = rb.velocity.normalized * originalSpeed;
+
+            // Define a propriedade "speed" do estado "run" de volta para o valor original
+            Numeralis.SetFloat("speed", originalSpeed);
 
             isDashing = false;
         }
