@@ -4,8 +4,8 @@
             "dificuldade": "Fácil",
             "limiteDeTempo": 900,
             "pontosPorAcerto": 100,
-            "danoPorAcerto": 4,
-            "danoPorErro": 1,
+            "danoPorAcerto": 40,
+            "danoPorErro": 10,
             "perguntas": [
               {
                 "textoDaPergunta": "Se você multiplicar 2 por ele mesmo três vezes, qual será o resultado?",
@@ -281,10 +281,10 @@
         },
         {
             "dificuldade": "Médio",
-            "limiteDeTempo": 900,
+            "limiteDeTempo": 600,
             "pontosPorAcerto": 200,
-            "danoPorAcerto": 0,
-            "danoPorErro": 0,
+            "danoPorAcerto": 30,
+            "danoPorErro": 15,
             "perguntas": [
       
               {
@@ -458,8 +458,8 @@
             "dificuldade": "Difícil",
             "limiteDeTempo": 900,
             "pontosPorAcerto": 300,
-            "danoPorAcerto": 0,
-            "danoPorErro": 0,
+            "danoPorAcerto":20,
+            "danoPorErro":30,
             "perguntas": [
       
               {
@@ -591,7 +591,26 @@
               }
       
             ]
+        },
+        {
+          "dificuldade": "Celso",
+          "limiteDeTempo": 120,
+          "pontosPorAcerto": 500,
+          "danoPorAcerto": 5,
+          "danoPorErro": 50,
+          "perguntas":[
+            {
+              "textoDaPergunta": "Qual é o nome do melhor professor de matemática?",
+              "respostas": [
+                {"textoResposta": "Celso", "estaCorreta": true},
+                {"textoResposta": "Celso", "estaCorreta": true},
+                {"textoResposta": "Celso", "estaCorreta": true},
+                {"textoResposta": "Celso", "estaCorreta": true}
+          ]
         }
     ]
   }
+]
+}
+
   
