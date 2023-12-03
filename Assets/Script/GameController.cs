@@ -135,6 +135,12 @@ public class GameController : MonoBehaviour
     }
     public void AnswerButtonClicked(bool estaCorreto)
     {
+        // Verificar se o jogo já terminou
+        if (!rodadaAtiva)
+        {
+            return;
+        }
+
         if (estaCorreto)
         {
             // Aumentar o score
@@ -143,14 +149,26 @@ public class GameController : MonoBehaviour
 
             // Reduzir a vida do vilão
             vidaDoVilao--;
+            Debug.Log($"Vida Vilão: {vidaDoVilao}/{vidaDoVilaoMaxima}");
 
             // Limitar a vida do vilão para não ficar negativa
             vidaDoVilao = Mathf.Max(vidaDoVilao, 0);
+
+            // Atualizar a interface gráfica de vida
+            AtualizarUIVida();
+
+            // Verificar se a vida do vilão atingiu zero
+            if (vidaDoVilao <= 0)
+            {
+                EndRound();
+                return;
+            }
         }
         else
         {
             // Reduzir a vida do jogador
             vidaDoJogador--;
+            Debug.Log($"Vida Jogador: {vidaDoJogador}/{vidaDoJogadorMaxima}");
 
             // Se a vida do jogador atingir zero, chame EndRound
             if (vidaDoJogador <= 0)
@@ -160,9 +178,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        // Atualizar a interface gráfica de vida
-        AtualizarUIVida();
-
+        // Se não houver mais perguntas, chame EndRound
         if (questionPool.Length > questionIndex + 1)
         {
             questionIndex++;
@@ -174,8 +190,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+
     private void AtualizarUIVida()
     {
+        Debug.Log($"Vida Jogador na UI: {vidaDoJogador}/{vidaDoJogadorMaxima}");
+        Debug.Log($"Vida Vilão na UI: {vidaDoVilao}/{vidaDoVilaoMaxima}");
         // Atualize a barra de vida do jogador com base na porcentagem de vida atual.
         float porcentagemVidaJogador = (float)vidaDoJogador / vidaDoJogadorMaxima;
         sliderVidaJogador.value = porcentagemVidaJogador;
