@@ -18,7 +18,7 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         dc = FindObjectOfType<DialogueControl>();
-        npcMovement = FindObjectOfType<NPCMovement>();
+        npcMovement = GetComponent<NPCMovement>(); // Agora pegamos o componente no mesmo objeto do script
     }
 
     private void FixedUpdate()
@@ -30,15 +30,14 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && onRadious)
         {
-            if (!dc.IsDialogueActive())  // Verifica se o diálogo não está ativo
+            if (!dc.IsDialogueActive())
             {
-                dc.Speech(profile, speechTxt, actorName);
-                
-                if(npcMovement != null)
+                dc.Speech(profile, speechTxt, actorName, npcMovement);
+
+                if (npcMovement != null)
                 {
                     npcMovement.PararNPC();
                 }
-                
             }
         }
     }
@@ -62,4 +61,3 @@ public class Dialogue : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radious);
     }
 }
-

@@ -128,6 +128,7 @@ public class NPCMovement : MonoBehaviour
     public void RetomarNPC()
     {
         moving = 0;
+        Debug.Log("Chamou a função");
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
