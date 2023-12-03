@@ -4,8 +4,8 @@
             "dificuldade": "Fácil",
             "limiteDeTempo": 900,
             "pontosPorAcerto": 100,
-            "danoPorAcerto": 0,
-            "danoPorErro": 0,
+            "danoPorAcerto": 4,
+            "danoPorErro": 1,
             "perguntas": [
               {
                 "textoDaPergunta": "Se você multiplicar 2 por ele mesmo três vezes, qual será o resultado?",
