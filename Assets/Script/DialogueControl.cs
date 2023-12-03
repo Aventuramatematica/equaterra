@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueControl : MonoBehaviour
 {
@@ -52,28 +53,32 @@ public class DialogueControl : MonoBehaviour
 
     public void NextSentence()
     {
+        Debug.Log($"{speechText.text}");
         if (speechText.text == sentences[index])
-        {
-            // Ainda tem texto dentro do array
-            if (index < sentences.Length - 1)
-            {
-                index++;
-                speechText.text = "";
-                StartCoroutine(TypeSentence());
-            }
-            else // Quando acabar os textos
-            {
-                speechText.text = "";
-                index = 0;
-                dialogueObj.SetActive(false);
-                dialogueActive = false;  // Define o diálogo como inativo
-                Debug.Log("npcMovement: " + npcMovement);
-                if (npcMovement != null)
-                {
-                    Debug.Log("Entrou no saida");
-                    npcMovement.RetomarNPC();
-                }
-            }
+         {
+             // Ainda tem texto dentro do rray
+             if (index < sentences.Length - 1)
+             {
+                 Debug.Log("Ainda tem texto dentro do array");
+                 index++;
+                 speechText.text = "";
+                 StartCoroutine(TypeSentence());
+             }
+             else // Quando acabar os textos
+             {
+                 Debug.Log("N tem texto dentro do array");
+                 speechText.text = "";
+                 index = 0;
+                 dialogueObj.SetActive(false);
+                 dialogueActive = false;  // Define o diálogo como inativo
+                 Debug.Log("npcMovement: " + npcMovement);
+                 if (npcMovement != null)
+                 {
+                     npcMovement.RetomarNPC();
+                 }
+             }
         }
     }
+
+ 
 }
