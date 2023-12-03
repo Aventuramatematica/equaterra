@@ -9,7 +9,7 @@ public class DataController : MonoBehaviour
 {
     private RoundData[] todasAsRodadas;
 
-    private int rodadaIndex;
+    public int rodadaIndex;
     private int playerHighScore;
 
     private string gameDataFileName = "data.json";
@@ -17,13 +17,12 @@ public class DataController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         DontDestroyOnLoad(gameObject);
-
         LoadGameData();
-
         SceneManager.LoadScene("QuizMenu");
-        
+
+        // Configura vidaMaximaAtual com base no rodadaIndex
+        ConfigurarVidaMaximaAtual();
     }
 
     // Update is called once per frame
@@ -73,6 +72,31 @@ public class DataController : MonoBehaviour
             playerHighScore = newScore;
             SavePLayerProgress();
         } 
+    }
+
+    private void ConfigurarVidaMaximaAtual()
+    {
+        PlayerHealthController playerHealthController = FindObjectOfType<PlayerHealthController>();
+
+        if (playerHealthController != null)
+        {
+            switch (rodadaIndex)
+            {
+                case 0:
+                    playerHealthController.DefinirVidaMaximaAtual(10);
+                    break;
+                case 1:
+                    playerHealthController.DefinirVidaMaximaAtual(7);
+                    break;
+                case 2:
+                    playerHealthController.DefinirVidaMaximaAtual(4);
+                    break;
+                case 3:
+                    playerHealthController.DefinirVidaMaximaAtual(1);
+                    break;
+                    // Adicione mais casos conforme necessário
+            }
+        }
     }
 
     public int GetHighScore()

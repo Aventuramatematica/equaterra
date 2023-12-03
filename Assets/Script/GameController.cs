@@ -10,16 +10,21 @@ public class GameController : MonoBehaviour
     public Text textoPergunta;
     public Text textoPontos;
     public Text textoTimer;
-    public Text textoHighScore;
+    public Text textoHighScoreDerrota;
+    public Text textoHighScoreVitoria;
+    public Text textoVidaJogador;
+    public Text textoVidaVilao;
 
     public SimpleObjectPool answerButtonObjectPool;
     public Transform answerButtonParent;
     public GameObject painelBatalha;
-    public GameObject painelFimRodada;
+    public GameObject painelDerrota;
+    public GameObject painelVitoria;
 
     private DataController dataController;
     private RoundData rodadaAtual;
     private QuestionData[] questionPool;
+    public PlayerHealthController playerHealthController;
 
     private bool rodadaAtiva;
     private float tempoRestante;
@@ -68,10 +73,18 @@ public class GameController : MonoBehaviour
         ShowQuestion();
         rodadaAtiva = true;
 
+        playerHealthController = FindObjectOfType<PlayerHealthController>();
+        int vidaMaximaAtual = playerHealthController.vidaMaximaAtual;
+
+        vidaDoJogadorMaxima = vidaMaximaAtual;
+
         vidaDoJogador = vidaDoJogadorMaxima;
         vidaDoVilao = vidaDoVilaoMaxima;
 
         AtualizarUIVida();
+
+        // Configura vidaDoVilaoMaxima com base no rodadaIndex
+        ConfigurarVidaDoVilaoMaxima();
     }
 
 
@@ -169,6 +182,7 @@ public class GameController : MonoBehaviour
             // Reduzir a vida do jogador
             vidaDoJogador--;
             Debug.Log($"Vida Jogador: {vidaDoJogador}/{vidaDoJogadorMaxima}");
+            AtualizarUIVida();
 
             // Se a vida do jogador atingir zero, chame EndRound
             if (vidaDoJogador <= 0)
@@ -202,6 +216,29 @@ public class GameController : MonoBehaviour
         // Atualize a barra de vida do vilão com base na porcentagem de vida atual.
         float porcentagemVidaVilao = (float)vidaDoVilao / vidaDoVilaoMaxima;
         sliderVidaVilao.value = porcentagemVidaVilao;
+
+        textoVidaJogador.text = $"{vidaDoJogador}";
+        textoVidaVilao.text = $"{vidaDoVilao}";
+    }
+
+    private void ConfigurarVidaDoVilaoMaxima()
+    {
+        switch (dataController.rodadaIndex)
+        {
+            case 0:
+                vidaDoVilaoMaxima = 5;
+                break;
+            case 1:
+                vidaDoVilaoMaxima = 10;
+                break;
+            case 2:
+                vidaDoVilaoMaxima = 15;
+                break;
+            case 3:
+                vidaDoVilaoMaxima = 20;
+                break;
+                // Adicione mais casos conforme necessário
+        }
     }
 
 
@@ -210,11 +247,23 @@ public class GameController : MonoBehaviour
         rodadaAtiva = false;
 
         dataController.EnviarNovoHighScore(playerScore);
-        textoHighScore.text = "High Score: " + dataController.GetHighScore().ToString();
+        textoHighScoreDerrota.text = "High Score: " + dataController.GetHighScore().ToString();
+        textoHighScoreVitoria.text = "High Score: " + dataController.GetHighScore().ToString();
+
+        if (vidaDoVilao <= 0)
+        {
+            // Ativar o painel de vitória se a vida do vilão acabou
+            painelVitoria.SetActive(true);
+        }
+        else
+        {
+            // Ativar o painel de derrota se a vida do jogador acabou
+            painelDerrota.SetActive(true);
+        }
 
         painelBatalha.SetActive(false);
-        painelFimRodada.SetActive(true);
     }
+
 
     public void ReturnToMenu()
     {
