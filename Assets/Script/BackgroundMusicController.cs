@@ -12,8 +12,6 @@ public class BackgroundMusicController : MonoBehaviour
     private AudioSource audioSource;
     private bool isMusicPlaying = false;
 
-    public Slider musicVolumeSlider; // Referência ao slider de volume da música
-
     private static BackgroundMusicController instance;
 
     void Awake()
@@ -35,8 +33,6 @@ public class BackgroundMusicController : MonoBehaviour
             // Inscreve o método SceneChanged para ser chamado quando a cena muda
             SceneManager.sceneLoaded += SceneChanged;
 
-            // Configura o slider para chamar a função SetMusicVolume quando o valor mudar
-            musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         }
         else
         {
@@ -73,12 +69,13 @@ public class BackgroundMusicController : MonoBehaviour
     void SceneChanged(Scene scene, LoadSceneMode mode)
     {
         // Se a cena mudou e a música estava tocando, pause a música
-        if (isMusicPlaying)
+        if (isMusicPlaying && audioSource != null)
         {
             audioSource.Pause();
             isMusicPlaying = false;
         }
     }
+
 
     void Update()
     {
