@@ -6,6 +6,7 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float moveTime = 2f;
     [SerializeField] private float maxDistance = 30;
+    [SerializeField] private Sprite spriteDefault;
     [SerializeField] private Sprite spriteNorteR;
     [SerializeField] private Sprite spriteNorteL;
     [SerializeField] private Sprite spriteLesteR;
@@ -37,13 +38,21 @@ public class NPCMovement : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0f)
+        if(moving != 5)
         {
-            moving = random.Next(0, 4);
-            timer = moveTime;
+            timer -= Time.deltaTime;
+
+            if (timer <= 0f)
+            {
+                moving = random.Next(0, 4);
+                timer = moveTime;
+            }
         }
+        else
+        {
+            spriteRenderer.sprite = spriteDefault;
+        }
+        
 
         MoveNPC();
 
@@ -112,9 +121,14 @@ public class NPCMovement : MonoBehaviour
 
     public void PararNPC()
     {
-
+        moving = 5;
+        spriteRenderer.sprite = spriteDefault;
     }
 
+    public void RetomarNPC()
+    {
+        moving = 0;
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Player")
