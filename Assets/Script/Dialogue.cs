@@ -18,6 +18,7 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         dc = FindObjectOfType<DialogueControl>();
+        npcMovement = FindObjectOfType<NPCMovement>();
     }
 
     private void FixedUpdate()
@@ -32,7 +33,12 @@ public class Dialogue : MonoBehaviour
             if (!dc.IsDialogueActive())  // Verifica se o diálogo não está ativo
             {
                 dc.Speech(profile, speechTxt, actorName);
-                npcMovement.PararNPC();
+                
+                if(npcMovement != null)
+                {
+                    npcMovement.PararNPC();
+                }
+                
             }
         }
     }

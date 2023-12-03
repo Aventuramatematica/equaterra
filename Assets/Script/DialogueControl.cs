@@ -17,11 +17,18 @@ public class DialogueControl : MonoBehaviour
     private int index;
     private bool dialogueActive = false;  // variável para rastrear o estado do diálogo
 
+
+    private NPCMovement npcMovement;
+
     public bool IsDialogueActive()
     {
         return dialogueActive;
     }
 
+    private void Start()
+    {
+        npcMovement = FindObjectOfType<NPCMovement>();
+    }
 
     public void Speech(Sprite p, string[] txt, string actorName)
     {
@@ -62,6 +69,10 @@ public class DialogueControl : MonoBehaviour
                 index = 0;
                 dialogueObj.SetActive(false);
                 dialogueActive = false;  // Define o diálogo como inativo
+                if (npcMovement != null)
+                {
+                    npcMovement.RetomarNPC();
+                }
             }
         }
     }
