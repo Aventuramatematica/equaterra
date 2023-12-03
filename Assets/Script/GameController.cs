@@ -25,14 +25,15 @@ public class GameController : MonoBehaviour
     private RoundData rodadaAtual;
     private QuestionData[] questionPool;
     public PlayerHealthController playerHealthController;
+    public NPCHealthController npcHealthController;
 
     private bool rodadaAtiva;
     private float tempoRestante;
     private int questionIndex;
     private int playerScore;
 
-    public int vidaDoJogadorMaxima = 3;
-    public int vidaDoVilaoMaxima = 3;
+    public int vidaDoJogadorMaxima = 0;
+    public int vidaDoVilaoMaxima = 0;
 
     private int vidaDoJogador;
     private int vidaDoVilao;
@@ -79,6 +80,12 @@ public class GameController : MonoBehaviour
         vidaDoJogadorMaxima = vidaMaximaAtual;
 
         vidaDoJogador = vidaDoJogadorMaxima;
+
+        npcHealthController = FindObjectOfType<NPCHealthController>();
+        int vidaMaximaAtualNPC = npcHealthController.vidaMaximaAtualNPC;
+
+        vidaDoVilaoMaxima = vidaMaximaAtualNPC;
+
         vidaDoVilao = vidaDoVilaoMaxima;
 
         AtualizarUIVida();
