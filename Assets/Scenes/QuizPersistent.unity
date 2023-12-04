@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1546022718}
   - component: {fileID: 1546022717}
+  - component: {fileID: 1546022719}
   m_Layer: 0
   m_Name: DataController
   m_TagString: Untagged
@@ -152,55 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810a7f5b297e59540a210e342c57cfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  todasAsRodadas:
-  - dificuldade: "F\xE1cil"
-    limiteDeTempo: 1000
-    pontosPorAcerto: 10
-    danoPorAcerto: 0
-    danoPorErro: 0
-    perguntas:
-    - textoDaPergunta: "Quanto \xE9 2+2?"
-      respostas:
-      - textoResposta: 1
-        estaCorreta: 0
-      - textoResposta: 2
-        estaCorreta: 0
-      - textoResposta: 4
-        estaCorreta: 1
-      - textoResposta: 3
-        estaCorreta: 0
-    - textoDaPergunta: "Quanto \xE9 3+2?"
-      respostas:
-      - textoResposta: 2
-        estaCorreta: 0
-      - textoResposta: 3
-        estaCorreta: 0
-      - textoResposta: 4
-        estaCorreta: 0
-      - textoResposta: 5
-        estaCorreta: 1
-    - textoDaPergunta: "Quanto \xE9 3+3?"
-      respostas:
-      - textoResposta: 6
-        estaCorreta: 1
-      - textoResposta: 5
-        estaCorreta: 0
-      - textoResposta: 4
-        estaCorreta: 0
-      - textoResposta: 3
-        estaCorreta: 0
-  - dificuldade: "M\xE9dio"
-    limiteDeTempo: 750
-    pontosPorAcerto: 25
-    danoPorAcerto: 0
-    danoPorErro: 0
-    perguntas: []
-  - dificuldade: "Dif\xEDcil"
-    limiteDeTempo: 500
-    pontosPorAcerto: 50
-    danoPorAcerto: 0
-    danoPorErro: 0
-    perguntas: []
+  rodadaIndex: 0
 --- !u!4 &1546022718
 Transform:
   m_ObjectHideFlags: 0
@@ -216,6 +169,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1546022719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546022716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bcd0e8d5c518448aa825305cdd59f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rodadaIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

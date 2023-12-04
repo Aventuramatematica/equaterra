@@ -36,10 +36,10 @@ public class NPCHealthController : MonoBehaviour
             // Atualiza vidaMaximaAtual com base no valor de rodadaIndex em DataController
             vidaMaximaAtualNPC = dataController.rodadaIndex switch
             {
-                0 => 5,
-                1 => 10,
-                2 => 15,
-                3 => 20,
+                0 => 10,
+                1 => 15,
+                2 => 20,
+                3 => 10,
                 // Adicione mais casos conforme necessário
                 _ => vidaMaximaAtualNPC // Valor padrão se rodadaIndex não corresponder a nenhum caso
             };

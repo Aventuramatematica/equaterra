@@ -36,9 +36,9 @@ public class PlayerHealthController : MonoBehaviour
             // Atualiza vidaMaximaAtual com base no valor de rodadaIndex em DataController
             vidaMaximaAtual = dataController.rodadaIndex switch
             {
-                0 => 10,
-                1 => 7,
-                2 => 4,
+                0 => 3,
+                1 => 2,
+                2 => 1,
                 3 => 1,
                 // Adicione mais casos conforme necessário
                 _ => vidaMaximaAtual // Valor padrão se rodadaIndex não corresponder a nenhum caso

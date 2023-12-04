@@ -5352,7 +5352,7 @@ MonoBehaviour:
   painelDerrota: {fileID: 304565351}
   painelVitoria: {fileID: 1502883841}
   playerHealthController: {fileID: 1615932635}
-  npcHealthController: {fileID: 0}
+  npcHealthController: {fileID: 696825570}
   vidaDoJogadorMaxima: 3
   vidaDoVilaoMaxima: 3
   sliderVidaJogador: {fileID: 36482667}

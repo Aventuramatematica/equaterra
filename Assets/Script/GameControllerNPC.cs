@@ -14,9 +14,9 @@ public class GameControllerNPC : MonoBehaviour
     public Transform answerButtonParent;
     public GameObject painelBatalhaNPC;
 
-    private DataController dataController;
-    private RoundData rodadaAtual;
-    private QuestionData[] questionPool;
+    private DataControllerNPC dataController;
+    private RoundDataNPC rodadaAtual;
+    private QuestionDataNPC[] questionPool;
     public PlayerHealthController playerHealthController;
     public DialogueCapangas dialogueCapangas;
 
@@ -42,7 +42,7 @@ public class GameControllerNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dataController = FindObjectOfType<DataController>();
+        dataController = FindObjectOfType<DataControllerNPC>();
 
         if (dataController == null)
         {
@@ -123,6 +123,13 @@ public class GameControllerNPC : MonoBehaviour
             // Iniciar a lógica da batalha NPC aqui, se necessário
             // ...
 
+            // Ativar o painel de vitória se a vida do vilão acabou
+            vidaDoVilao = 10;
+
+            // Adicionar 1 à vida máxima do jogador
+            vidaDoJogador = playerHealthController.AumentarVidaMaxima(0);
+
+
             // Mostrar a primeira pergunta
             ShowQuestion();
         }
@@ -139,7 +146,7 @@ public class GameControllerNPC : MonoBehaviour
         }
 
         int random1 = random;
-        QuestionData questionData = questionPool[random1];
+        QuestionDataNPC questionData = questionPool[random1];
         usedValues.Add(random);
         Debug.Log("Mostrando pergunta: " + questionData.textoDaPergunta);
         textoPergunta.text = questionData.textoDaPergunta;
@@ -152,7 +159,7 @@ public class GameControllerNPC : MonoBehaviour
 
             answerButtonGameObjects.Add(answerButtonGameObject);
 
-            AnswerButton answerButton = answerButtonGameObject.GetComponent<AnswerButton>();
+            AnswerButtonNPC answerButton = answerButtonGameObject.GetComponent<AnswerButtonNPC>();
             answerButton.Setup(questionData.respostas[i]);
         }
     }
@@ -238,26 +245,45 @@ public class GameControllerNPC : MonoBehaviour
         if (vidaDoVilao <= 0)
         {
             // Ativar o painel de vitória se a vida do vilão acabou
-            painelBatalhaNPC.SetActive(false);
-            vidaDoVilao = 3;
+            vidaDoVilao = 10;
 
             // Adicionar 1 à vida máxima do jogador
             vidaDoJogador = playerHealthController.AumentarVidaMaxima(1);
+
+            // Desativar o objeto do NPC se a vida do NPC atingir zero
+            painelBatalhaNPC.SetActive(false);
         }
         else if (vidaDoJogador <= 0)
         {
-            // Desativar o objeto do NPC se a vida do jogador atingir zero
-            painelBatalhaNPC.SetActive(false);
-
             // Subtrair 1 da vida máxima do jogador
             vidaDoJogador = playerHealthController.AumentarVidaMaxima(-1);
 
             // Resetar a vida do vilão para 3
-            vidaDoVilao = 3;
+            vidaDoVilao = 10;
 
             // Atualizar a barra de vida do vilão
             AtualizarUIVida();
+
+            // Desativar o objeto do NPC se a vida do jogador atingir zero
+            painelBatalhaNPC.SetActive(false);
         }
+
+        // Resetar variáveis para reiniciar a rodada
+        questionIndex = 0;
+        usedValues.Clear();
+        rodadaAtiva = true;
+        tempoRestante = rodadaAtual.limiteDeTempo;
+
+        // Reiniciar a vida do jogador e do vilão
+        vidaDoJogador = vidaDoJogadorMaxima;
+        vidaDoVilao = vidaDoVilaoMaxima;
+
+        // Atualizar a barra de vida do jogador e do vilão
+        AtualizarUIVida();
+
+        // Reiniciar a rodada mostrando a primeira pergunta
+        ShowQuestion();
     }
+
 
 }
