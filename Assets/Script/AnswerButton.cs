@@ -8,11 +8,11 @@ public class AnswerButton : MonoBehaviour
     public Text textoDaResposta;
     private AnswerData answerData;
 
-    private GameControllerNPC gameController;
+    private GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
-        gameController = FindObjectOfType <GameControllerNPC>();
+        gameController = FindObjectOfType <GameController>();
 
     }
 
