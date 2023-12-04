@@ -11,12 +11,14 @@ public class Dialogue : MonoBehaviour
     public LayerMask playerLayer;
     public float radious;
 
+    private PlayerController playerController;
     private DialogueControl dc;
     private NPCMovement npcMovement;
     bool onRadious;
 
     private void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         dc = FindObjectOfType<DialogueControl>();
         npcMovement = GetComponent<NPCMovement>(); // Agora pegamos o componente no mesmo objeto do script
     }
@@ -37,6 +39,14 @@ public class Dialogue : MonoBehaviour
                 if (npcMovement != null)
                 {
                     npcMovement.PararNPC();
+                }
+
+                // Certifique-se de que playerController não seja nulo
+                if (playerController != null)
+                {
+                    Debug.Log("Entriy");
+                    // Chame a função BlockNum no PlayerController
+                    playerController.BlockNum();
                 }
             }
         }
