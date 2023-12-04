@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 6e2dba71b719f8140b2d7532c825c2ff
-  - enabled: 1
     path: Assets/Scenes/QuizPersistent.unity
     guid: a530085e828dec54b8430faca770546e
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6e2dba71b719f8140b2d7532c825c2ff
   - enabled: 1
     path: Assets/Scenes/QuizMenu.unity
     guid: 213ff008a26796e4f9898a6d8c3b824d
