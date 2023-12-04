@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NewMapa.unity
     guid: c3b5fabc2bf865548ab4858fdf39599a
   - enabled: 1
+    path: Assets/Scenes/QuizGameCapangas.unity
+    guid: 5b608d07a3166ef438dde98b80f77d97
+  - enabled: 1
     path: Assets/Scenes/QuizGame.unity
     guid: c934ab5d8220bf343b8a405afde25f45
   - enabled: 1

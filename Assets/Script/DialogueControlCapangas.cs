@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class DialogueControlCapangas: MonoBehaviour
+public class DialogueControlCapangas : MonoBehaviour
 {
     [Header("Components")]
     public GameObject dialogueObj;
@@ -16,10 +15,11 @@ public class DialogueControlCapangas: MonoBehaviour
     public float typingSpeed;
     private string[] sentences;
     private int index;
-    private bool dialogueActive = false;  // variável para rastrear o estado do diálogo
+    private bool dialogueActive = false;  // variï¿½vel para rastrear o estado do diï¿½logo
 
     private PlayerController playerController;
 
+    public Canvas batalhaCanvas;  // Adicione este campo para a referï¿½ncia do Canvas
 
     private NPCMovement npcMovement;
 
@@ -33,12 +33,10 @@ public class DialogueControlCapangas: MonoBehaviour
         return dialogueActive;
     }
 
-
-
     public void SpeechCapangas(Sprite p, string[] txt, string actorName, NPCMovement npc)
     {
         dialogueActive = true;
-        index = 0;  // Inicializa o índice para começar do início
+        index = 0;  // Inicializa o ï¿½ndice para comeï¿½ar do inï¿½cio
         dialogueObj.SetActive(true);
         profile.sprite = p;
         sentences = txt;
@@ -49,7 +47,7 @@ public class DialogueControlCapangas: MonoBehaviour
 
     IEnumerator TypeSentenceCampangas()
     {
-        speechText.text = "";  // Limpa o texto antes de começar a digitar
+        speechText.text = "";  // Limpa o texto antes de comeï¿½ar a digitar
         foreach (char letter in sentences[index].ToCharArray())
         {
             speechText.text += letter;
@@ -57,12 +55,11 @@ public class DialogueControlCapangas: MonoBehaviour
         }
     }
 
-
     public void NextSentenceCapangas()
     {
         if (speechText.text == sentences[index])
         {
-            // Ainda tem texto dentro do rray
+            // Ainda tem texto dentro do array
             if (index < sentences.Length - 1)
             {
         
@@ -75,13 +72,13 @@ public class DialogueControlCapangas: MonoBehaviour
                 speechText.text = "";
                 index = 0;
                 dialogueObj.SetActive(false);
-                dialogueActive = false;  // Define o diálogo como inativ
+                dialogueActive = false;  // Define o diï¿½logo como inativo
                 
-                // Certifique-se de que playerController não seja nulo
+                // Certifique-se de que playerController nï¿½o seja nulo
                 if (playerController != null)
                 {
                     Debug.Log("Entriy");
-                    // Chame a função BlockNum no PlayerController
+                    // Chame a funï¿½ï¿½o BlockNum no PlayerController
                     playerController.BlockNum();
                 }
                 if (npcMovement != null)
@@ -94,14 +91,25 @@ public class DialogueControlCapangas: MonoBehaviour
 
     public void BattleNpc()
     {
-
-        SceneManager.LoadScene("QuizGame");
+        // Ativar o canvas "BatalhaNPC" em vez de carregar uma cena
+        if (batalhaCanvas != null)
+        {
+            batalhaCanvas.gameObject.SetActive(true);
+        }
 
         if (npcMovement != null)
         {
             npcMovement.RetomarNPC();
         }
 
+        // Obter referï¿½ncia para GameControllerNPC
+        GameControllerNPC gameControllerNPC = FindObjectOfType<GameControllerNPC>();
 
+        // Verificar se GameControllerNPC foi encontrado
+        if (gameControllerNPC != null)
+        {
+            // Chamar o mï¿½todo IniciarBatalhaNPC e passar os parï¿½metros necessï¿½rios
+            gameControllerNPC.IniciarBatalhaNPC(profile.sprite, actorNameText.text);
+        }
     }
 }
