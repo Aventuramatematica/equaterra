@@ -70,7 +70,7 @@ public class DialogueControlCapangas: MonoBehaviour
                 speechText.text = "";
                 index = 0;
                 dialogueObj.SetActive(false);
-                dialogueActive = false;  // Define o diálogo como inativo
+                dialogueActive = false;  // Define o diálogo como inativ
                 Debug.Log("npcMovement: " + npcMovement);
                 if (npcMovement != null)
                 {
