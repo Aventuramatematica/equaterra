@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,8 +16,9 @@ public class DialogueControl : MonoBehaviour
     public float typingSpeed;
     private string[] sentences;
     private int index;
-    private bool dialogueActive = false;  // variável para rastrear o estado do diálogo
+    private bool dialogueActive = false;  // variÃ¡vel para rastrear o estado do diÃ¡logo
 
+    private PlayerController playerController;
 
     private NPCMovement npcMovement;
 
@@ -31,7 +32,7 @@ public class DialogueControl : MonoBehaviour
     public void Speech(Sprite p, string[] txt, string actorName, NPCMovement npc)
     {
         dialogueActive = true;
-        index = 0;  // Inicializa o índice para começar do início
+        index = 0;  // Inicializa o Ã­ndice para comeÃ§ar do inÃ­cio
         dialogueObj.SetActive(true);
         profile.sprite = p;
         sentences = txt;
@@ -42,14 +43,17 @@ public class DialogueControl : MonoBehaviour
 
     IEnumerator TypeSentence()
     {
-        speechText.text = "";  // Limpa o texto antes de começar a digitar
+        speechText.text = "";  // Limpa o texto antes de comeÃ§ar a digitar
         foreach (char letter in sentences[index].ToCharArray())
         {
             speechText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
     }
-
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
 
     public void NextSentence()
     {
@@ -70,13 +74,23 @@ public class DialogueControl : MonoBehaviour
                  speechText.text = "";
                  index = 0;
                  dialogueObj.SetActive(false);
-                 dialogueActive = false;  // Define o diálogo como inativo
+                 dialogueActive = false;  // Define o diÃ¡logo como inativo
                  Debug.Log("npcMovement: " + npcMovement);
                  if (npcMovement != null)
                  {
                      npcMovement.RetomarNPC();
                  }
-             }
+
+                // Certifique-se de que playerController nï¿½o seja nulo
+                if (playerController != null)
+                {
+                    Debug.Log("Entriy");
+                    // Chame a funï¿½ï¿½o BlockNum no PlayerController
+                    playerController.BlockNum();
+                }
+               
+            }
+
         }
     }
 
