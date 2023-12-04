@@ -12,6 +12,7 @@ public class DialogueCapangas : MonoBehaviour
     public float radious;
 
     private DialogueControlCapangas dc;
+    private PlayerController playerController;
     private NPCMovement npcMovement;
     private string[] frases = new string[]
     {
@@ -41,6 +42,7 @@ public class DialogueCapangas : MonoBehaviour
 
     private void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         // Cria uma instância da classe Random fora do método Start
         System.Random random = new System.Random();
 
@@ -63,6 +65,9 @@ public class DialogueCapangas : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && onRadious)
         {
+
+            
+
             if (!dc.IsDialogueActiveCapangas())
             {
                 dc.SpeechCapangas(profile, speechTxt.ToArray(), actorName, npcMovement);
@@ -70,6 +75,14 @@ public class DialogueCapangas : MonoBehaviour
                 if (npcMovement != null)
                 {
                     npcMovement.PararNPC();
+                }
+                
+                // Certifique-se de que playerController não seja nulo
+                if (playerController != null)
+                {
+                    Debug.Log("Entriy");
+                    // Chame a função BlockNum no PlayerController
+                    playerController.BlockNum();
                 }
             }
 

@@ -18,9 +18,16 @@ public class DialogueControlCapangas: MonoBehaviour
     private int index;
     private bool dialogueActive = false;  // variável para rastrear o estado do diálogo
 
+    private PlayerController playerController;
+
 
     private NPCMovement npcMovement;
 
+
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
     public bool IsDialogueActiveCapangas()
     {
         return dialogueActive;
@@ -53,25 +60,30 @@ public class DialogueControlCapangas: MonoBehaviour
 
     public void NextSentenceCapangas()
     {
-        Debug.Log($"{speechText.text}");
         if (speechText.text == sentences[index])
         {
             // Ainda tem texto dentro do rray
             if (index < sentences.Length - 1)
             {
-                Debug.Log("Ainda tem texto dentro do array");
+        
                 index++;
                 speechText.text = "";
                 StartCoroutine(TypeSentenceCampangas());
             }
             else // Quando acabar os textos
             {
-                Debug.Log("N tem texto dentro do array");
                 speechText.text = "";
                 index = 0;
                 dialogueObj.SetActive(false);
                 dialogueActive = false;  // Define o diálogo como inativ
-                Debug.Log("npcMovement: " + npcMovement);
+                
+                // Certifique-se de que playerController não seja nulo
+                if (playerController != null)
+                {
+                    Debug.Log("Entriy");
+                    // Chame a função BlockNum no PlayerController
+                    playerController.BlockNum();
+                }
                 if (npcMovement != null)
                 {
                     npcMovement.RetomarNPC();

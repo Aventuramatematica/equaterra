@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public float groundDistance;
     public bool isGrounded;
+    public bool isPlayerLocked = false;
     public Vector3[] footOffSet;
 
     [Header("Audio")]
@@ -56,8 +57,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
+        if (isPlayerLocked) 
+        {
+            verticalInput = 0f;
+            horizontalInput = 0f;
+
+            Vector2 moveInputA = new Vector2(horizontalInput, verticalInput);
+            Vector2 moveVelocityA = moveInputA.normalized * (isDashing ? dashSpeed : speed);
+
+            rb.velocity = moveVelocityA;
+
+            Numeralis.SetFloat("input_x", moveInputA.x);
+            Numeralis.SetFloat("input_y", moveInputA.y);
+            Numeralis.SetBool("isWalking", moveInputA.magnitude > 0);
+            return;
+        }
+        
 
         // Normaliza o vetor de entrada apenas se o jogador não estiver se movendo na diagonal
         if (horizontalInput != 0 && verticalInput != 0)
@@ -83,13 +101,25 @@ public class PlayerController : MonoBehaviour
         Numeralis.SetFloat("input_y", moveInput.y);
         Numeralis.SetBool("isWalking", moveInput.magnitude > 0);
 
-        // Verifica se a tecla Shift está sendo pressionada e o jogador está em movimento.
+        // Verifica se a tecla Shift está sendo pressionada e o jogador está em movimento
         if (Input.GetKey(KeyCode.LeftShift) && moveInput.magnitude > 0)
         {
             StartCoroutine(Dash());
         }
     }
 
+    public void BlockNum()
+    {
+        Debug.Log("Chegou ate aqui sacana");
+        if (isPlayerLocked)
+        {
+            isPlayerLocked = false;
+        }
+        else
+        {
+            isPlayerLocked = true;
+        }
+    }
 
     private void FixedUpdate()
     {
