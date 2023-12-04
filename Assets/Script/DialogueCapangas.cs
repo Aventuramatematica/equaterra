@@ -7,6 +7,7 @@ public class DialogueCapangas : MonoBehaviour
     public Sprite profile;
     private List<string> speechTxt = new List<string>(); // Alterado para List<string>
     public string actorName;
+    public GameObject objectNPC;
 
     public LayerMask playerLayer;
     public float radious;
@@ -66,17 +67,17 @@ public class DialogueCapangas : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && onRadious)
         {
 
-            
+
 
             if (!dc.IsDialogueActiveCapangas())
             {
-                dc.SpeechCapangas(profile, speechTxt.ToArray(), actorName, npcMovement);
+                dc.SpeechCapangas(objectNPC, profile, speechTxt.ToArray(), actorName, npcMovement);
 
                 if (npcMovement != null)
                 {
                     npcMovement.PararNPC();
                 }
-                
+
                 // Certifique-se de que playerController não seja nulo
                 if (playerController != null)
                 {
@@ -86,7 +87,7 @@ public class DialogueCapangas : MonoBehaviour
                 }
             }
 
-            
+
         }
     }
 

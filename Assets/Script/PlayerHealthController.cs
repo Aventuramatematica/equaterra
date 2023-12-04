@@ -75,11 +75,17 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     // Método para aumentar a vida máxima do jogador
-    public void AumentarVidaMaxima(int quantidadeAumento)
+    public int AumentarVidaMaxima(int quantidadeAumento)
     {
         vidaMaximaAtual += quantidadeAumento;
 
+        // Garante que a vida máxima não seja negativa
+        vidaMaximaAtual = Mathf.Max(vidaMaximaAtual, 0);
+
         // Atualiza o texto da vida do jogador
         AtualizarUITextoVida();
+
+        return vidaMaximaAtual;
     }
+
 }

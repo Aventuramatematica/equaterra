@@ -7,6 +7,7 @@ public class DialogueControlCapangas : MonoBehaviour
 {
     [Header("Components")]
     public GameObject dialogueObj;
+    public GameObject objectNPC;
     public Image profile;
     public Text speechText;
     public Text actorNameText;
@@ -33,10 +34,10 @@ public class DialogueControlCapangas : MonoBehaviour
         return dialogueActive;
     }
 
-    public void SpeechCapangas(Sprite p, string[] txt, string actorName, NPCMovement npc)
+    public void SpeechCapangas(GameObject obj, Sprite p, string[] txt, string actorName, NPCMovement npc)
     {
         dialogueActive = true;
-        index = 0;  // Inicializa o �ndice para come�ar do in�cio
+        index = 0;
         dialogueObj.SetActive(true);
         profile.sprite = p;
         sentences = txt;
