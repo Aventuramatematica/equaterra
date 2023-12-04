@@ -2,8 +2,9 @@
     "todasAsRodadas": [
         {
             "dificuldade": "Fácil",
-            "limiteDeTempo": 900,
+            "limiteDeTempo": 300,
             "pontosPorAcerto": 100,
+            "pontosPorErro": 25,
             "danoPorAcerto": 40,
             "danoPorErro": 10,
             "perguntas": [
@@ -281,8 +282,9 @@
         },
         {
             "dificuldade": "Médio",
-            "limiteDeTempo": 600,
+            "limiteDeTempo": 180,
             "pontosPorAcerto": 200,
+            "pontosPorErro": 50,
             "danoPorAcerto": 30,
             "danoPorErro": 15,
             "perguntas": [
@@ -456,8 +458,9 @@
         },
         {
             "dificuldade": "Difícil",
-            "limiteDeTempo": 900,
+            "limiteDeTempo": 120,
             "pontosPorAcerto": 300,
+            "pontosPorErro": 150,
             "danoPorAcerto":20,
             "danoPorErro":30,
             "perguntas": [
@@ -594,8 +597,9 @@
         },
         {
           "dificuldade": "Celso",
-          "limiteDeTempo": 120,
+          "limiteDeTempo": 60,
           "pontosPorAcerto": 500,
+          "pontosPorErro": 400,
           "danoPorAcerto": 5,
           "danoPorErro": 50,
           "perguntas":[

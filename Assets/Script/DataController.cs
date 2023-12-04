@@ -19,7 +19,7 @@ public class DataController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         LoadGameData();
-        SceneManager.LoadScene("QuizMenu");
+        SceneManager.LoadScene("Menu");
 
         // Configura vidaMaximaAtual com base no rodadaIndex
         ConfigurarVidaMaximaAtual();

@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Sala do conselho
-  delayInSeconds: 88
+  delayInSeconds: 76
 --- !u!4 &614026737
 Transform:
   m_ObjectHideFlags: 0
@@ -2714,9 +2714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bea59cef4aa5664e869f1c4d661ebd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeDoLevelDeJogo: 
   painelMenuInicial: {fileID: 1953673892}
   painelOpcoes: {fileID: 498773482}
+  painelDificuldade: {fileID: 0}
 --- !u!114 &1513683197
 MonoBehaviour:
   m_ObjectHideFlags: 0

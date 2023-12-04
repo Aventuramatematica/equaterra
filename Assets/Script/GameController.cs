@@ -165,26 +165,19 @@ public class GameController : MonoBehaviour
         {
             // Aumentar o score
             playerScore += rodadaAtual.pontosPorAcerto;
-            textoPontos.text = "Score: " + playerScore.ToString();
-
-            // Reduzir a vida do vilão
-            vidaDoVilao--;
-            Debug.Log($"Vida Vilão: {vidaDoVilao}/{vidaDoVilaoMaxima}");
-
-            // Limitar a vida do vilão para não ficar negativa
-            vidaDoVilao = Mathf.Max(vidaDoVilao, 0);
-
-            // Atualizar a interface gráfica de vida
-            AtualizarUIVida();
-
-            // Verificar se a vida do vilão atingiu zero
-            if (vidaDoVilao <= 0)
-            {
-                EndRound();
-                return;
-            }
         }
         else
+        {
+            // Reduzir o score por erro
+            playerScore -= rodadaAtual.pontosPorErro;
+
+            // Certifique-se de que o score não seja negativo
+            playerScore = Mathf.Max(playerScore, 0);
+        }
+
+        textoPontos.text = "Score: " + playerScore.ToString();
+
+        if (!estaCorreto)
         {
             // Reduzir a vida do jogador
             vidaDoJogador--;
@@ -193,6 +186,21 @@ public class GameController : MonoBehaviour
 
             // Se a vida do jogador atingir zero, chame EndRound
             if (vidaDoJogador <= 0)
+            {
+                EndRound();
+                return;
+            }
+        }
+
+        // Reduzir a vida do vilão se a resposta estiver correta
+        if (estaCorreto)
+        {
+            vidaDoVilao --;
+            Debug.Log($"Vida Vilão: {vidaDoVilao}/{vidaDoVilaoMaxima}");
+            AtualizarUIVida();
+
+            // Se a vida do vilão atingir zero, chame EndRound
+            if (vidaDoVilao <= 0)
             {
                 EndRound();
                 return;
@@ -274,7 +282,7 @@ public class GameController : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("QuizMenu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void fimJogo()

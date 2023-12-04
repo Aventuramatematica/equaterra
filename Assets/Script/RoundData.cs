@@ -11,6 +11,8 @@ public class RoundData
 
     public int pontosPorAcerto;
 
+    public int pontosPorErro;
+
     public int danoPorAcerto;
 
     public int danoPorErro;

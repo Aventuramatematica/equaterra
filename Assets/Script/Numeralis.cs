@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 2.5f;
     public float dashSpeed = 5f;
     public float dashDuration = 0.5f; // Duração do dash em segundos.
+    private Vector2 lastMoveDirection = Vector2.down; // Inicializado para baixo, você pode ajustar conforme necessário.
 
     private Rigidbody2D rb;
     private bool isDashing = false;
@@ -57,9 +58,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
+
         if (isPlayerLocked) 
         {
             verticalInput = 0f;
@@ -106,6 +107,23 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+
+        rb.velocity = moveVelocity;
+
+        if (moveInput.magnitude > 0)
+        {
+            lastMoveDirection = moveInput.normalized;
+        }
+
+        Numeralis.SetFloat("input_x", lastMoveDirection.x);
+        Numeralis.SetFloat("input_y", lastMoveDirection.y);
+        Numeralis.SetBool("isWalking", moveInput.magnitude > 0);
+
+        // Verifica se a tecla Shift está sendo pressionada e o jogador está em movimento
+        if (Input.GetKey(KeyCode.LeftShift) && moveInput.magnitude > 0)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     public void BlockNum()
@@ -140,17 +158,11 @@ public class PlayerController : MonoBehaviour
             // Aumenta a velocidade durante o dash.
             rb.velocity = rb.velocity.normalized * dashSpeed;
 
-            // Define a propriedade "speed" do estado "run" para 1 no Animator
-            Numeralis.SetFloat("speed", 1);
-
             // Espera a duração do dash.
             yield return new WaitForSeconds(dashDuration);
 
             // Retorna à velocidade normal.
             rb.velocity = rb.velocity.normalized * originalSpeed;
-
-            // Define a propriedade "speed" do estado "run" de volta para o valor original
-            Numeralis.SetFloat("speed", originalSpeed);
 
             isDashing = false;
         }
