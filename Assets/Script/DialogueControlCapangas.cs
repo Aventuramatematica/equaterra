@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class DialogueControlCapangas: MonoBehaviour
+public class DialogueControlCapangas : MonoBehaviour
 {
     [Header("Components")]
     public GameObject dialogueObj;
@@ -18,6 +17,7 @@ public class DialogueControlCapangas: MonoBehaviour
     private int index;
     private bool dialogueActive = false;  // variável para rastrear o estado do diálogo
 
+    public Canvas batalhaCanvas;  // Adicione este campo para a referência do Canvas
 
     private NPCMovement npcMovement;
 
@@ -25,8 +25,6 @@ public class DialogueControlCapangas: MonoBehaviour
     {
         return dialogueActive;
     }
-
-
 
     public void SpeechCapangas(Sprite p, string[] txt, string actorName, NPCMovement npc)
     {
@@ -50,13 +48,12 @@ public class DialogueControlCapangas: MonoBehaviour
         }
     }
 
-
     public void NextSentenceCapangas()
     {
         Debug.Log($"{speechText.text}");
         if (speechText.text == sentences[index])
         {
-            // Ainda tem texto dentro do rray
+            // Ainda tem texto dentro do array
             if (index < sentences.Length - 1)
             {
                 Debug.Log("Ainda tem texto dentro do array");
@@ -70,7 +67,7 @@ public class DialogueControlCapangas: MonoBehaviour
                 speechText.text = "";
                 index = 0;
                 dialogueObj.SetActive(false);
-                dialogueActive = false;  // Define o diálogo como inativ
+                dialogueActive = false;  // Define o diálogo como inativo
                 Debug.Log("npcMovement: " + npcMovement);
                 if (npcMovement != null)
                 {
@@ -82,14 +79,25 @@ public class DialogueControlCapangas: MonoBehaviour
 
     public void BattleNpc()
     {
-
-        SceneManager.LoadScene("QuizGame");
+        // Ativar o canvas "BatalhaNPC" em vez de carregar uma cena
+        if (batalhaCanvas != null)
+        {
+            batalhaCanvas.gameObject.SetActive(true);
+        }
 
         if (npcMovement != null)
         {
             npcMovement.RetomarNPC();
         }
 
+        // Obter referência para GameControllerNPC
+        GameControllerNPC gameControllerNPC = FindObjectOfType<GameControllerNPC>();
 
+        // Verificar se GameControllerNPC foi encontrado
+        if (gameControllerNPC != null)
+        {
+            // Chamar o método IniciarBatalhaNPC e passar os parâmetros necessários
+            gameControllerNPC.IniciarBatalhaNPC(profile.sprite, actorNameText.text);
+        }
     }
 }
