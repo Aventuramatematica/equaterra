@@ -20,7 +20,6 @@ public class BackgroundMusicController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.loop = true;
 
@@ -30,14 +29,6 @@ public class BackgroundMusicController : MonoBehaviour
                 audioSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups(mixerGroupName)[0];
             }
 
-            // Inscreve o método SceneChanged para ser chamado quando a cena muda
-            SceneManager.sceneLoaded += SceneChanged;
-
-        }
-        else
-        {
-            // Se uma instância já existe, destrua esta
-            Destroy(gameObject);
         }
     }
 
