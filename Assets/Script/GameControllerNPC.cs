@@ -90,6 +90,8 @@ public class GameControllerNPC : MonoBehaviour
         AtualizarUIVida();
     }
 
+    //bla bla
+
     // Update is called once per frame
     void Update()
     {
