@@ -30,6 +30,8 @@ public class GameControllerNPC : MonoBehaviour
     private int vidaDoJogador;
     private int vidaDoVilao;
 
+    private NPCHealthController vidaNPC;
+
     public Slider sliderVidaJogador;
     public Slider sliderVidaVilao;
     public Image profileNPC;
@@ -39,7 +41,7 @@ public class GameControllerNPC : MonoBehaviour
 
     private List<GameObject> answerButtonGameObjects = new List<GameObject>();
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update.
     void Start()
     {
         dataController = FindObjectOfType<DataControllerNPC>();
@@ -66,6 +68,14 @@ public class GameControllerNPC : MonoBehaviour
             return;
         }
 
+        vidaNPC = FindObjectOfType<NPCHealthController>();
+
+        if (vidaNPC == null)
+        {
+            Debug.LogError("NPCHealthController não encontrado.");
+            return;
+        }
+
         questionPool = rodadaAtual.perguntas;
         tempoRestante = rodadaAtual.limiteDeTempo;
 
@@ -81,7 +91,7 @@ public class GameControllerNPC : MonoBehaviour
 
         vidaDoJogador = vidaDoJogadorMaxima;
 
-        int vidaMaximaAtualNPC = 3;
+        int vidaMaximaAtualNPC = vidaNPC.ConfigurarVidaMaximaAtual();
 
         vidaDoVilaoMaxima = vidaMaximaAtualNPC;
 
@@ -89,7 +99,6 @@ public class GameControllerNPC : MonoBehaviour
 
         AtualizarUIVida();
     }
-
     //bla bla
 
     // Update is called once per frame
@@ -97,7 +106,7 @@ public class GameControllerNPC : MonoBehaviour
     {
         if (rodadaAtiva)
         {
-            tempoRestante -= Time.deltaTime;
+            
             UpdateTimer();
             if (tempoRestante <= 0)
             {
@@ -109,7 +118,7 @@ public class GameControllerNPC : MonoBehaviour
 
     private void UpdateTimer()
     {
-        textoTimer.text = "Timer: " + Mathf.Round(tempoRestante).ToString();
+        textoTimer.text = " ";
 
     }
 
@@ -122,14 +131,8 @@ public class GameControllerNPC : MonoBehaviour
         // Verificar se textoPergunta está atribuído antes de chamar ShowQuestion
         if (textoPergunta != null)
         {
-            // Iniciar a lógica da batalha NPC aqui, se necessário
-            // ...
+               
 
-            // Ativar o painel de vitória se a vida do vilão acabou
-            vidaDoVilao = 10;
-
-            // Adicionar 1 à vida máxima do jogador
-            vidaDoJogador = playerHealthController.AumentarVidaMaxima(0);
 
 
             // Mostrar a primeira pergunta
@@ -258,7 +261,7 @@ public class GameControllerNPC : MonoBehaviour
         else if (vidaDoJogador <= 0)
         {
             // Subtrair 1 da vida máxima do jogador
-            vidaDoJogador = playerHealthController.AumentarVidaMaxima(-1);
+            vidaDoJogador = playerHealthController.AumentarVidaMaxima(0);
 
             // Resetar a vida do vilão para 3
             vidaDoVilao = 10;
@@ -274,7 +277,6 @@ public class GameControllerNPC : MonoBehaviour
         questionIndex = 0;
         usedValues.Clear();
         rodadaAtiva = true;
-        tempoRestante = rodadaAtual.limiteDeTempo;
 
         // Reiniciar a vida do jogador e do vilão
         vidaDoJogador = vidaDoJogadorMaxima;
