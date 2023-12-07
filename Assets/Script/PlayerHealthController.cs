@@ -9,13 +9,17 @@ public class PlayerHealthController : MonoBehaviour
 
     public Text textoVidaJogador;
 
+    private bool novaVida = false;
+
     void Start()
     {
-        // Inicializa a vida máxima do jogador
-        vidaMaximaAtual = 3; // Valor padrão
+
 
         // Chama o método para configurar a vidaMaximaAtual com base no rodadaIndex
+        
         ConfigurarVidaMaximaAtual();
+        
+        
 
         // Atualiza o texto da vida do jogador
         AtualizarUITextoVida();
@@ -33,25 +37,40 @@ public class PlayerHealthController : MonoBehaviour
 
         if (dataController != null)
         {
-            // Atualiza vidaMaximaAtual com base no valor de rodadaIndex em DataController
-            vidaMaximaAtual = dataController.rodadaIndex switch
-            {
-                0 => 3,
-                1 => 2,
-                2 => 1,
-                3 => 1,
-                // Adicione mais casos conforme necessário
-                _ => vidaMaximaAtual // Valor padrão se rodadaIndex não corresponder a nenhum caso
-            };
+            // Obtém o valor salvo de "vidaPlayer" usando PlayerPrefs.GetInt
+            int vd = PlayerPrefs.GetInt("vidaPlayer");
 
-            // Atualiza o texto da vida do jogador
-            AtualizarUITextoVida();
+            if (vd == 0)
+            {
+                // Atualiza vidaMaximaAtual com base no valor de rodadaIndex em DataController
+                vidaMaximaAtual = dataController.rodadaIndex switch
+                {
+                    0 => 3,
+                    1 => 2,
+                    2 => 1,
+                    3 => 1,
+                    // Adicione mais casos conforme necessário
+                    _ => vidaMaximaAtual // Valor padrão se rodadaIndex não corresponder a nenhum caso
+                };
+
+                // Atualiza o texto da vida do jogador
+                AtualizarUITextoVida();
+
+                // Salva a vidaMaximaAtual usando PlayerPrefs.SetInt
+                PlayerPrefs.SetInt("vidaPlayer", vidaMaximaAtual);
+            }
+            else
+            {
+                // Se o valor já estiver definido, utiliza esse valor
+                vidaMaximaAtual = vd;
+            }
         }
     }
 
     public void DefinirVidaMaximaAtual(int novaVidaMaxima)
     {
         vidaMaximaAtual = novaVidaMaxima;
+        novaVida = true;
         AtualizarUITextoVida();
     }
 

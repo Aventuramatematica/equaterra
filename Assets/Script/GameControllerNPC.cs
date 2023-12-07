@@ -254,6 +254,7 @@ public class GameControllerNPC : MonoBehaviour
 
             // Adicionar 1 à vida máxima do jogador
             vidaDoJogador = playerHealthController.AumentarVidaMaxima(1);
+            PlayerPrefs.SetInt("vidaPlayer", vidaDoJogador);
 
             // Desativar o objeto do NPC se a vida do NPC atingir zero
             painelBatalhaNPC.SetActive(false);
