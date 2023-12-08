@@ -1514,38 +1514,11 @@ MonoBehaviour:
     voc\xEA n\xE3o chegava!"
   - "Bem, jovem Numeralis, sou Maximus, mestre da multiplica\xE7\xE3o e vou te guiar
     durante seu treinamento."
-  - "Para enfrentar o feiticeiro, voc\xEA deve dominar os 5 conte\xFAdos que est\xE3o
-    com cada orientador."
-  - "Mas antes voc\xEA precisa entender que na multiplica\xE7\xE3o, voc\xEA combina
-    dois n\xFAmeros para encontrar o resultado. Por exemplo, se voc\xEA tem 3 caixas,
-    e cada caixa tem 4 pedrinhas, voc\xEA pode usar a multiplica\xE7\xE3o para saber
-    quantas voc\xEA tem no total."
-  - "Ent\xE3o, voc\xEA faz assim: 3 (caixas) \xD7 4 (pedrinhas em cada caixa) = 12
-    pedras Isso significa que voc\xEA tem um total de 12. "
-  - "A potencia\xE7\xE3o \xE9 uma opera\xE7\xE3o matem\xE1tica que envolve o uso
-    de expoentes para representar o produto de um n\xFAmero multiplicado por ele
-    mesmo v\xE1rias vezes."
-  - "Assim, a potencia\xE7\xE3o \xE9 geralmente representada como a^b, onde \"a\"
-    \xE9 a base e \"b\" \xE9 o expoente. \"a\" representa o n\xFAmero que voc\xEA
-    deseja elevar. \"b\" representa o n\xFAmero de vezes que voc\xEA multiplica \"a\"
-    por ele mesmo."
-  - "Assim voc\xEA multiplica a base (a) por ela mesma \"b\" vezes. Por exemplo,
-    2^3 significa que voc\xEA multiplica 2 por 2 por 2, que \xE9 igual a 8."
-  - "O conselho n\xE3o errou quando te escolheu!"
-  - "Mas voc\xEA ainda tem um longo caminho pela frente!"
-  - "Depois de dominar a multiplica\xE7\xE3o, vou te ensinar sobre o Produto de Pot\xEAncias
-    de Mesma Base"
-  - "Para multiplicar essas duas pot\xEAncias, voc\xEA pode aplicar a seguinte regra:
-    voc\xEA mant\xE9m a mesma base e soma os expoentes"
-  - 'Por exemplo: 3^(4) * 3^(2) = 3^(4+2)'
-  - "Em seguida vem a divis\xE3o de pot\xEAncias de mesma base."
-  - "Quando voc\xEA divide pot\xEAncias com a mesma base, voc\xEA subtrai os expoentes."
-  - 'Por exemplo: 2^(5)/2^(3) = 3^(5-3)'
-  - Acredito que agora tenha aprendido meus ensinamentos
-  - "Numeralis, tenho uma dica muito importante! Al\xE9m de aprender, voc\xEA precisar\xE1
-    juntar a ESS\xCANCIA VITAL derrotando os capangas que est\xE3o espalhados na
-    Equaterra! "
-  - "Agora v\xE1 encontrar o Radix, ele est\xE1 \xE0 sua espera na regi\xE3o da praia! "
+  - "Para enfrentar o feiticeiro, voc\xEA deve entender sobre potencia\xE7\xE3o,
+    v\xE1 at\xE9 a biblioteca e estude um pouco."
+  - "Logo ap\xF3s procure o Radix na praia e o Quocentix nas planices ao oeste."
+  - "E n\xE3o se esque\xE7a de ir falar com o Divisio na cidade, ele te explicar\xE1
+    como enfrentar os nossos inimigos."
   actorName: Maximus
   playerLayer:
     serializedVersion: 2
@@ -2258,7 +2231,8 @@ MonoBehaviour:
     golpes do Feiticeiro voc\xEA poder\xE1 aguentar ao errar uma pergunta dele. Mas
     n\xE3o se preocupe! Caso voc\xEA ainda n\xE3o tenha o dom\xEDnio da Matem\xE1tica,
     os nossos her\xF3is podem te ajudar ao ensinar-lhe. Aproveite e d\xEA uma olhadinha
-    na biblioteca tamb\xE9m. Boa sorte!"
+    na biblioteca tamb\xE9m. Ah e n\xE3o se preocupe se demorar um pouquinho para
+    sair da casa, essa transi\xE7\xE3o est\xE1 um pouquinho demorada Boa sorte!"
 --- !u!222 &466113180
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13411,6 +13385,17 @@ MonoBehaviour:
     expoentes fracion\xE1rios."
   - "Regra dos Zeros: Ao elevar 10 a uma pot\xEAncia, o n\xFAmero de zeros no resultado
     \xE9 igual ao expoente."
+  - "Exemplos: 3 (caixas) \xD7 4 (pedrinhas em cada caixa) = 12 pedras Isso significa
+    que voc\xEA tem um total de 12. "
+  - "A potencia\xE7\xE3o \xE9 uma opera\xE7\xE3o matem\xE1tica que envolve o uso
+    de expoentes para representar o produto de um n\xFAmero multiplicado por ele
+    mesmo v\xE1rias vezes."
+  - "Assim, a potencia\xE7\xE3o \xE9 geralmente representada como a^b, onde \"a\"
+    \xE9 a base e \"b\" \xE9 o expoente. \"a\" representa o n\xFAmero que voc\xEA
+    deseja elevar. \"b\" representa o n\xFAmero de vezes que voc\xEA multiplica \"a\"
+    por ele mesmo."
+  - "Assim voc\xEA multiplica a base (a) por ela mesma \"b\" vezes. Por exemplo,
+    2^3 significa que voc\xEA multiplica 2 por 2 por 2, que \xE9 igual a 8."
   actorName: Biblioteca
   playerLayer:
     serializedVersion: 2
