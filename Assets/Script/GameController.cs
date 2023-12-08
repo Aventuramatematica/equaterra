@@ -282,7 +282,9 @@ public class GameController : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        PlayerPrefs.SetInt("vidaPlayer", 0);
         SceneManager.LoadScene("Menu");
+
     }
 
     public void fimJogo()
